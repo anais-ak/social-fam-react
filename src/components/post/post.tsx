@@ -1,9 +1,8 @@
 import Image from "next/image";
 import classes from "@/components/post/post.module.css";
 import DateIcon from "@/components/ui/icons/date-icon.js";
-import { Post } from "@/types/post";
 
-export default function Post(props: { post: Post }) {
+export default function Post(props) {
   const { post } = props;
 
   const postDate = new Date(post.date).toLocaleDateString("en-US", {
@@ -14,7 +13,10 @@ export default function Post(props: { post: Post }) {
 
   return (
     <div className={classes.postContainer}>
-      <Image src={"/" + post.image} alt={post.title} width={500} height={500} />
+      <div>
+        <Image src={"/" + post.image} alt="alt" width={500} height={500} />
+      </div>
+
       <div>
         <h2>{post.title}</h2>
         <time className={classes.date}>

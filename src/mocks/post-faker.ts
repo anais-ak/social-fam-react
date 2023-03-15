@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Post } from "@/types/post";
+// import { Post } from "@/types/post";
 
 const images: string[] = [
   "images/stephen.jpg",
@@ -7,30 +7,30 @@ const images: string[] = [
   "images/dogs.jpg",
 ];
 
-const getPost = (): Post => {
+const getPost = () => {
   return {
     id: faker.datatype.number(),
     title: faker.lorem.sentence(5),
     description: faker.lorem.paragraph(),
     date: faker.date.past().toString(),
     image: faker.helpers.arrayElement(images),
-    isFeatured: faker.datatype.boolean(),
+    isFeatured: true, //faker.datatype.boolean(),
   };
 };
 
-const getPostList = (listSize: number): Post[] => {
+const getPostList = (listSize: number) => {
   return Array.from({ length: listSize }, getPost);
 };
 
-export function getFeaturedPosts(listSize: number): Post[] {
+export function getFeaturedPosts(listSize: number) {
   return getPostList(listSize).filter((post) => post.isFeatured);
 }
 
-export function getAllPosts(listSize: number): Post[] {
+export function getAllPosts(listSize: number) {
   return getPostList(listSize);
 }
 
-// export function getFilteredPosts(dateFilter: string): Post[] {
+// export function getFilteredPosts(dateFilter: string) {
 //   const { year, month } = dateFilter;
 
 //   let filteredPosts = getPostList(5).filter((post) => {
@@ -41,6 +41,6 @@ export function getAllPosts(listSize: number): Post[] {
 //   return filteredPosts;
 // }
 
-export function getPostById(id: number): Post | null {
+export function getPostById(id: number) {
   return getPostList(5).find((post) => post.id === id) || null;
 }
