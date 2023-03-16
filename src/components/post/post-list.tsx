@@ -1,10 +1,9 @@
 import PostComponent from "@/components/post/post";
 import PostSort from "@/components/post/post-sort";
 import { useRouter } from "next/router";
-import { Post } from "@/types/post";
+import { IPost } from "@/types/post";
 
-// : { posts: Post[] }
-export default function PostList(props: { posts: Post[] }) {
+export default function PostList(props: { posts: IPost[] }) {
   useRouter();
   const { posts } = props;
 

@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import { Person } from "@/types/person";
+import { IPerson } from "@/types/person";
 import Link from "next/link";
 
-export default function PersonList(props: { members: Person[] }) {
+export default function PersonList(props: { members: IPerson[] }) {
   useRouter();
   const { members } = props;
 

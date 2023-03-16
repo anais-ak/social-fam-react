@@ -1,8 +1,9 @@
 import Image from "next/image";
 import classes from "@/components/post/post.module.css";
 import DateIcon from "@/components/ui/icons/date-icon.js";
+import { IPost } from "@/types/post";
 
-export default function Post(props) {
+export default function Post(props: { post: IPost }) {
   const { post } = props;
 
   const postDate = new Date(post.date).toLocaleDateString("en-US", {

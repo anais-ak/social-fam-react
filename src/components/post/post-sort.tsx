@@ -2,17 +2,17 @@ import { useRef } from "react";
 import classes from "@/components/post/post-sort.module.css";
 import Button from "@/components/ui/button";
 
-export default function PostSort(props) {
+export default function PostSort(props: {
+  onSort: (sort: string, isFeatured: string) => void;
+}) {
   const sortInput = useRef();
   const featuredInput = useRef();
 
   const sortHandler = function (event) {
     event.preventDefault();
 
-    console.log("a");
-
-    const sortDirection = sortInput.current.value;
-    const idFeatured = featuredInput.current.value;
+    const sortDirection = sortInput?.current?.value;
+    const idFeatured = featuredInput?.current?.value;
 
     props.onSort(sortDirection, idFeatured);
   };

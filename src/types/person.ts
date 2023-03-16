@@ -1,5 +1,6 @@
-export interface Person {
+import { IPost } from "@/types/post";
+export interface IPerson {
   id: number;
   name: string;
-  Posts?: [];
+  posts?: IPost[];
 }

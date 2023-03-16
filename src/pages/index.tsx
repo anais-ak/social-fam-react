@@ -1,16 +1,13 @@
-import Link from "next/link";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import PostList from "@/components/post/post-list";
-import { Post } from "@/types/post";
-// import fs from "fs";
-// import path from "path";
+import { IPost } from "@/types/post";
 
-import { getFeaturedPosts } from "@/mocks/post-faker";
+import { getFeaturedPosts } from "@/mocks/post-mock";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home(props: { posts: Post[] }) {
+export default function Home(props: { posts: IPost[] }) {
   const { posts } = props;
 
   return (

@@ -1,7 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 import MainHeader from "@/components/layout/main-header";
 
-export default function Layout(props) {
+function Layout(props: { children: ReactNode }) {
   return (
     <Fragment>
       <MainHeader></MainHeader>
@@ -9,3 +9,5 @@ export default function Layout(props) {
     </Fragment>
   );
 }
+
+export default Layout;

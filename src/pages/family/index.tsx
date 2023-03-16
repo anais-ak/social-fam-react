@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { getAllPersons } from "@/mocks/person-mock";
 import PersonList from "@/components/family/person-list";
+import { IPerson } from "@/types/person";
 
-export default function FamilyPage(props) {
+export default function FamilyPage(props: { family: IPerson[] }) {
   const { family } = props;
   return (
     <div>
@@ -12,7 +12,7 @@ export default function FamilyPage(props) {
   );
 }
 
-async function getData() {
+async function getData(): IPerson[] {
   return getAllPersons(5);
 }
 
