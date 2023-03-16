@@ -7,11 +7,11 @@ export default function PostList(props: { posts: IPost[] }) {
   useRouter();
   const { posts } = props;
 
-  const sortHandler = function (sort: string, isFeatured: string): Post[] {
-    const featured = isFeatured == "no" ? false : true;
+  const sortHandler = function (sort?: string, isFeatured?: string): IPost[] {
+    const featured = isFeatured == "yes" ? true : false;
     const res = posts
       .filter((post) => post.isFeatured == featured)
-      .sort(function (a: Post, b: Post) {
+      .sort(function (a: IPost, b: IPost) {
         const aDate: Date = new Date(a.date);
         const bDate: Date = new Date(b.date);
         if (sort == "asc") return aDate.getTime() - bDate.getTime();

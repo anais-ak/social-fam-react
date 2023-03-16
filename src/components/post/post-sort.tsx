@@ -3,12 +3,12 @@ import classes from "@/components/post/post-sort.module.css";
 import Button from "@/components/ui/button";
 
 export default function PostSort(props: {
-  onSort: (sort: string, isFeatured: string) => void;
+  onSort: (sort?: string, isFeatured?: string) => void;
 }) {
-  const sortInput = useRef();
-  const featuredInput = useRef();
+  const sortInput = useRef<HTMLSelectElement>(null);
+  const featuredInput = useRef<HTMLSelectElement>(null);
 
-  const sortHandler = function (event) {
+  const sortHandler = function (event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
 
     const sortDirection = sortInput?.current?.value;

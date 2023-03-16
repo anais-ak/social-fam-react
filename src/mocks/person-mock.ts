@@ -3,6 +3,9 @@ import { getAllPosts } from "@/mocks/post-mock";
 import { IPerson } from "@/types/person";
 
 const getPerson = (id?: number): IPerson => {
+  console.log("id");
+  console.log(id);
+
   return {
     id: id || faker.datatype.number(),
     name: faker.name.firstName(),

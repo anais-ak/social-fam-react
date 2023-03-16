@@ -12,7 +12,7 @@ export default function FamilyPage(props: { family: IPerson[] }) {
   );
 }
 
-async function getData(): IPerson[] {
+async function getData(): Promise<IPerson[]> {
   return getAllPersons(5);
 }
 

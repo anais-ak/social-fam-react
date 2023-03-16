@@ -11,7 +11,9 @@ export default function PersonList(props: { members: IPerson[] }) {
       <ul>
         {members.map((member) => (
           <li key={member.id}>
-            <Link href={"/family/" + member.id}>{member.name}</Link>
+            <Link href={"/family/" + member.id}>
+              {member.name} - {member.id}
+            </Link>
           </li>
         ))}
       </ul>
